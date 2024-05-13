@@ -9,7 +9,7 @@ This is a solution template for creating a test purpose with ASP.NET MVC and ASP
 * ASP.NET Core 7
 * ASP.NET MVC
 * Dapper
-* [NUnit](https://nunit.org/), [FluentAssertions](https://fluentassertions.com/), [Moq](https://github.com/moq) & [Respawn](https://github.com/jbogard/Respawn)
+* [NUnit](https://nunit.org/)
 * [Docker](https://www.docker.com/)
 
 ## Getting Started
@@ -21,7 +21,7 @@ The easiest way to get started is to install the [NuGet package](https://www.nug
 1. Create the Database
 2. Create the BOOKS table using the script below:
 
-
+```
 CREATE TABLE [dbo].[books](
 	[book_id] [int] IDENTITY(1,1) NOT NULL,
 	[title] [varchar](100) NOT NULL,
@@ -45,7 +45,7 @@ GO
 
 ALTER TABLE [dbo].[books] ADD  DEFAULT ((0)) FOR [copies_in_use]
 GO
-
+```
 
 ## Overview
 
