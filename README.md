@@ -14,7 +14,7 @@ This is a solution template for creating a test purpose with ASP.NET MVC and ASP
 
 ## Getting Started
 
-The easiest way to get started is to install the [NuGet package](https://www.nuget.org/packages/Clean.Architecture.Solution.Template) and run `dotnet new ca-sln`:
+The easiest way to get started is to install the [NuGet package](https://www.nuget.org/packages/Clean.Architecture.Solution.Template) and run the project in the Visual Studio.
 
 ### Database Configuration
 
@@ -53,17 +53,21 @@ GO
 
 This will contain all entities, enums, exceptions, interfaces, types and logic specific to the domain layer.
 
-### Application
+### Service
 
-This layer contains all application logic. It is dependent on the domain layer, but has no dependencies on any other layer or project. This layer defines interfaces that are implemented by outside layers. For example, if the application need to access a notification service, a new interface would be added to application and an implementation would be created within infrastructure.
+This layer contains all business application logic. It is dependent on the domain layer and infra layer. 
 
 ### Infrastructure
 
-This layer contains classes for accessing external resources such as databases, file systems, web services, smtp, and so on. These classes should be based on interfaces defined within the application layer.
+This layer contains classes for accessing external resources such as databases, file systems, web services, smtp, and so on. 
 
-### WebUI
+### Presentation
 
-This layer is a single page application based on ASP.NET Core MVC. 
+This layer is a contains the Web site application based on ASP.NET Core MVC and the API based on ASP.NET Core.
+
+### Tests
+
+This layer is a contains unit tests and integration tests for all applications, but the main tested layer is the Service layer.
 
 ## License
 
