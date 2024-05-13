@@ -1,5 +1,6 @@
 using BookStore.Repository.Interfaces;
 using BookStore.Service.BusinessLogic;
+using BookStore.Service.BusinessLogic.Events.Interfaces;
 using BookStore.Tests.Mocks;
 
 namespace BookStore.Tests
@@ -8,6 +9,7 @@ namespace BookStore.Tests
     public class BookStoreServiceTests
     {
         private IBookRepository _mockRepository;
+        private IEventBus _mockEventBus;
         private BookStoreService _bookStoreService;
 
         [SetUp]
@@ -15,7 +17,7 @@ namespace BookStore.Tests
         {
             // Configuração do repositório mockado para os testes
             _mockRepository = new MockBookRepository();
-            _bookStoreService = new BookStoreService(_mockRepository);
+            _bookStoreService = new BookStoreService(_mockRepository, _mockEventBus);
         }
 
         [Test]

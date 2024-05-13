@@ -14,9 +14,10 @@ namespace BookStore.Repository
             this.connectionString = connectionString;
         }
 
-        public Task<IEnumerable<Book>> AddBookAsync(string author, string isbn, string status)
+        public async Task<Book> AddBookAsync(string author, string isbn, string status)
         {
-            throw new NotImplementedException();
+            //Todo need implementation to add to database
+            return new Book() { FirstName =  author, ISBN = isbn, Status = status };
         }
 
         public async Task<IEnumerable<Book>> SearchBooksAsync(string author, string isbn, string status)

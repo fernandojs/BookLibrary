@@ -1,5 +1,4 @@
 ﻿using BookStore.Presentation.API.Models;
-using BookStore.Repository.Interfaces;
 using BookStore.Service.BusinessLogic.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 

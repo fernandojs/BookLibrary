@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Confluent.Kafka" Version="2.4.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\BookStore.Domain\BookStore.Domain.csproj" />
     <ProjectReference Include="..\BookStore.Repository\BookStore.Repository.csproj" />
   </ItemGroup>
