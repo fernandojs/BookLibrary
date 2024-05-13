@@ -23,10 +23,10 @@ namespace BookStore.Service.BusinessLogic
             return await _bookRepository.SearchBooksAsync(author, isbn, status);
         }
 
-        public void AddBook(string title, string author, string status)
+        public async Task AddBookAsync(string title, string author, string status)
         {
             //Add to Database
-            //_bookRepository.Add(title, author, status);
+            await _bookRepository.AddBookAsync(title, author, status);
             
             OnBookAdded(new BookEventArgs(title, author, status));
         }

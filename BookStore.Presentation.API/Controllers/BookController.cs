@@ -37,7 +37,7 @@ namespace BookStore.Presentation.API.Controllers
 
             try
             {
-                _bookStoreService.AddBook(book.Title, book.Author, book.Status);
+                _bookStoreService.AddBookAsync(book.Title, book.Author, book.Status);
                 return Ok($"Book '{book.Title}' added successfully.");
             }
             catch (Exception ex)
