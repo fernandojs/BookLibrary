@@ -18,6 +18,7 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 
 builder.Services.AddScoped<IBookRepository, BookRepository>(provider =>{  return new BookRepository(connectionString);});
 builder.Services.AddScoped<IBookStoreService, BookStoreService>();
+builder.Services.AddScoped<INotificationService, NotificationService>();
 
 builder.Services.AddControllers();
 
@@ -25,6 +26,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
