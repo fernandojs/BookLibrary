@@ -17,4 +17,10 @@
     <PackageReference Include="coverlet.collector" Version="3.2.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BookStore.Domain\BookStore.Domain.csproj" />
+    <ProjectReference Include="..\BookStore.Repository\BookStore.Repository.csproj" />
+    <ProjectReference Include="..\BookStore.Service.BusinessLogic\BookStore.Service.BusinessLogic.csproj" />
+  </ItemGroup>
+
 </Project>
