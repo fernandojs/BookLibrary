@@ -25,7 +25,7 @@ namespace BookStore.Service.BusinessLogic
 
             if (!string.IsNullOrEmpty(type))
             {
-                await _eventBus.Publish(new SearchEvent(type, value, DateTime.UtcNow.ToString()), "Search");
+                await _eventBus.Publish(new SearchEvent(type, value, DateTime.UtcNow.ToString()), "search");
             }
 
             return books;
