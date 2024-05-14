@@ -11,19 +11,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Service", "2 - Service"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookStore.Service.BusinessLogic", "BookStore.Service.BusinessLogic\BookStore.Service.BusinessLogic.csproj", "{F964491D-DAEB-478C-BA4C-7511D12AB6BD}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{D1D7D66C-8948-489F-873A-CE9F4D39200F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Domain", "4 - Domain", "{D1D7D66C-8948-489F-873A-CE9F4D39200F}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infra", "4 - Infra", "{84A98FC0-7418-4C3F-B1E1-1AA693D5CDDE}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Infra", "5 - Infra", "{84A98FC0-7418-4C3F-B1E1-1AA693D5CDDE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookStore.Repository", "BookStore.Repository\BookStore.Repository.csproj", "{A966A469-A559-4AB9-85D9-A838F68F9B1A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookStore.Domain", "BookStore.Domain\BookStore.Domain.csproj", "{703AEE1B-8589-4F98-AF2C-0DDE9CCBA233}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Tests", "5 - Tests", "{C7310E3C-878E-4E23-80C0-A66A1F76DEE1}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6 - Tests", "6 - Tests", "{C7310E3C-878E-4E23-80C0-A66A1F76DEE1}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookStore.Tests", "BookStore.Tests\BookStore.Tests.csproj", "{3E3613AE-AB6B-4722-BF4D-69F7790796AD}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookStore.Presentation.Web", "BookStore.Presentation.Web\BookStore.Presentation.Web.csproj", "{B269950F-0A57-47CC-BB79-166B77DA4EB1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Applications", "3 - Applications", "{95CF0D37-CF43-4535-BEF3-27659B3ED4D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore.Service.BookSearchAnalyticsProcessor", "BookStore.Service.BookSearchAnalyticsProcessor\BookStore.Service.BookSearchAnalyticsProcessor.csproj", "{0A7A002B-A53F-4873-AF6F-B57CDF7A88D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +59,10 @@ Global
 		{B269950F-0A57-47CC-BB79-166B77DA4EB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B269950F-0A57-47CC-BB79-166B77DA4EB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B269950F-0A57-47CC-BB79-166B77DA4EB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A7A002B-A53F-4873-AF6F-B57CDF7A88D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A7A002B-A53F-4873-AF6F-B57CDF7A88D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A7A002B-A53F-4873-AF6F-B57CDF7A88D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A7A002B-A53F-4873-AF6F-B57CDF7A88D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,6 +74,7 @@ Global
 		{703AEE1B-8589-4F98-AF2C-0DDE9CCBA233} = {D1D7D66C-8948-489F-873A-CE9F4D39200F}
 		{3E3613AE-AB6B-4722-BF4D-69F7790796AD} = {C7310E3C-878E-4E23-80C0-A66A1F76DEE1}
 		{B269950F-0A57-47CC-BB79-166B77DA4EB1} = {3D2BBF20-1C08-4CE4-AFB9-9E5D401416F9}
+		{0A7A002B-A53F-4873-AF6F-B57CDF7A88D6} = {95CF0D37-CF43-4535-BEF3-27659B3ED4D4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7C6BF858-1102-4252-8F0F-BD1C2564DC74}

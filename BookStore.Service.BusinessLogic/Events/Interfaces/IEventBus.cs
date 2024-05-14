@@ -2,6 +2,6 @@
 {
     public interface IEventBus
     {
-        Task Publish(IIntegrationEvent integrationEvent);
+        Task Publish(IIntegrationEvent integrationEvent, string topicName);
     }
 }

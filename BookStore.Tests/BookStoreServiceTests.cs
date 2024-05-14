@@ -17,6 +17,7 @@ namespace BookStore.Tests
         {
             // Configuração do repositório mockado para os testes
             _mockRepository = new MockBookRepository();
+            _mockEventBus = new MockEventBus();
             _bookStoreService = new BookStoreService(_mockRepository, _mockEventBus);
         }
 

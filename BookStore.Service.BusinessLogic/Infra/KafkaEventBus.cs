@@ -5,11 +5,10 @@ using Newtonsoft.Json;
 namespace BookStore.Service.BusinessLogic.Infra
 {
     public class KafkaEventBus : IEventBus
-    {
-        public string TopicName { get; set; } = "books";
+    {        
         public string KafkaServer { get; set; } = "localhost:9092";
 
-        public async Task Publish(IIntegrationEvent integrationEvent)
+        public async Task Publish(IIntegrationEvent integrationEvent, string topicName)
         {
             try
             {
@@ -24,7 +23,7 @@ namespace BookStore.Service.BusinessLogic.Infra
                 using (var producer = new ProducerBuilder<Null, string>(config).Build())
                 {
                     var result = await producer.ProduceAsync(
-                        TopicName,
+                        topicName,
                         new Message<Null, string>()
                         { Value = JsonConvert.SerializeObject(integrationEvent) }
                     );
