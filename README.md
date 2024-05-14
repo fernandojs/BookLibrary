@@ -1,7 +1,7 @@
   
  # Clean Architecture Book Library for testing purpose
 
-This is a solution template for creating a test purpose with ASP.NET MVC and ASP.NET Core following the principles of Clean Architecture. 
+This template provides a solution for building a test application using ASP.NET MVC and ASP.NET Core, adhering to Clean Architecture principles. It incorporates event handlers along with Kafka publishers and consumers.
 
 
 ## Technologies
@@ -9,6 +9,7 @@ This is a solution template for creating a test purpose with ASP.NET MVC and ASP
 * ASP.NET Core 7
 * ASP.NET MVC
 * Dapper
+* Kafta
 * [NUnit](https://nunit.org/)
 * [Docker](https://www.docker.com/)
 
@@ -56,6 +57,10 @@ This will contain all entities, enums, exceptions, interfaces, types and logic s
 ### Service
 
 This layer contains all business application logic. It is dependent on the domain layer and infra layer. 
+
+### Applications
+
+This layer comprises applications such as microservices that consume from Kafka.
 
 ### Infrastructure
 
