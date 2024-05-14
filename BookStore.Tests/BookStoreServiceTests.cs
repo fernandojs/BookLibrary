@@ -2,6 +2,8 @@ using BookStore.Repository.Interfaces;
 using BookStore.Service.BusinessLogic;
 using BookStore.Service.BusinessLogic.Events.Interfaces;
 using BookStore.Tests.Mocks;
+using MediatR;
+using Moq;
 
 namespace BookStore.Tests
 {
@@ -10,6 +12,7 @@ namespace BookStore.Tests
     {
         private IBookRepository _mockRepository;
         private IEventBus _mockEventBus;
+        private Mock<IMediator> _mockMediator;
         private BookStoreService _bookStoreService;
 
         [SetUp]
@@ -18,7 +21,10 @@ namespace BookStore.Tests
             // Configuração do repositório mockado para os testes
             _mockRepository = new MockBookRepository();
             _mockEventBus = new MockEventBus();
-            _bookStoreService = new BookStoreService(_mockRepository, _mockEventBus);
+            _mockMediator = new Mock<IMediator>();
+            _mockMediator.Setup(m => m.Send(It.IsAny<IRequest<bool>>(), It.IsAny<CancellationToken>()))
+                     .ReturnsAsync(true);
+            _bookStoreService = new BookStoreService(_mockRepository, _mockEventBus, _mockMediator.Object);
         }
 
         [Test]

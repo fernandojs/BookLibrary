@@ -2,19 +2,23 @@
 using BookStore.Repository.Interfaces;
 using BookStore.Service.BusinessLogic.Events;
 using BookStore.Service.BusinessLogic.Events.Interfaces;
+using BookStore.Service.BusinessLogic.Events.Notifications;
 using BookStore.Service.BusinessLogic.Interfaces;
+using MediatR;
 
 namespace BookStore.Service.BusinessLogic
 {
     public class BookStoreService : IBookStoreService
     {
         private readonly IBookRepository _bookRepository;
-        private readonly IEventBus _eventBus;        
+        private readonly IEventBus _eventBus;
+        private readonly IMediator _mediator;
 
-        public BookStoreService(IBookRepository bookRepository, IEventBus eventBus)
+        public BookStoreService(IBookRepository bookRepository, IEventBus eventBus, IMediator mediator)
         {
             _bookRepository = bookRepository;
             _eventBus = eventBus;
+            _mediator = mediator;
         }
 
         public async Task<IEnumerable<Book>> SearchBooksAsync(string? author, string? isbn, string? status)
@@ -25,19 +29,11 @@ namespace BookStore.Service.BusinessLogic
 
             if (!string.IsNullOrEmpty(type))
             {
-                await _eventBus.Publish(new SearchEvent(type, value, DateTime.UtcNow.ToString()), "search");
+                await _mediator.Publish(new SearchNotification(type, value, DateTime.UtcNow.ToString()));              
             }
 
             return books;
-        }
-
-        public async Task AddBookAsync(string title, string author, string status)
-        {
-            //Add to Database
-            await _bookRepository.AddBookAsync(title, author, status);
-
-            await _eventBus.Publish(new BookCreatedEvent(title, author, status), "addBook");
-        }
+        }     
 
         private (string type, string value) DetermineSearchTypeAndValue(string? author, string? isbn, string? status)
         {

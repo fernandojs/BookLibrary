@@ -4,6 +4,7 @@ using BookStore.Service.BusinessLogic;
 using BookStore.Service.BusinessLogic.Events.Interfaces;
 using BookStore.Service.BusinessLogic.Infra;
 using BookStore.Service.BusinessLogic.Interfaces;
+using MediatR;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +22,9 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddScoped<IBookRepository, BookRepository>(provider =>{  return new BookRepository(connectionString);});
 builder.Services.AddScoped<IBookStoreService, BookStoreService>();
 builder.Services.AddScoped<IEventBus, KafkaEventBus>();
+
+builder.Services.AddMediatR(cfg =>
+     cfg.RegisterServicesFromAssembly(typeof(BusinessLogic).Assembly));
 
 builder.Services.AddControllers();
 

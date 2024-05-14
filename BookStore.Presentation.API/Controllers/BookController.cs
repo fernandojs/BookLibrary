@@ -1,5 +1,4 @@
-﻿using BookStore.Presentation.API.Models;
-using BookStore.Service.BusinessLogic.Interfaces;
+﻿using BookStore.Service.BusinessLogic.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookStore.Presentation.API.Controllers
@@ -24,26 +23,6 @@ namespace BookStore.Presentation.API.Controllers
 
             var books = await _bookStoreService.SearchBooksAsync(author, isbn, status);
             return Ok(books);
-        }
-
-        [HttpPost("addbook")]
-        public IActionResult AddBook([FromBody] BookModel book)
-        {
-            if (book == null || string.IsNullOrWhiteSpace(book.Title))
-            {
-                return BadRequest("Invalid book data.");
-            }
-
-            try
-            {
-                _bookStoreService.AddBookAsync(book.Title, book.Author, book.Status);
-                return Ok($"Book '{book.Title}' added successfully.");
-            }
-            catch (Exception ex)
-            {
-                // Log the exception details here as needed
-                return StatusCode(500, "An error occurred while adding the book.");
-            }
-        }
+        }       
     }
 }
